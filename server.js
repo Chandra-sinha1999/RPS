@@ -23,10 +23,10 @@ io.on('connection',(sock) => {
         waitingPlayer = sock;
         waitingPlayer.emit('message','Waiting for an opponent');
     }
-
-    sock.on('message',(text) => {
-        io.emit('message',text);
-    });
+    // sock.on('message',(msg) => {
+    //     io.emit('message',msg);
+    // });
+    
 });
 server.on('error',(err) =>{
     console.error('Server error:',err);

@@ -5,11 +5,18 @@ class Rpsgame {
         this._players = [p1,p2];
         this._scores = [0,0];
         this._turns = [null,null];
+        this._recMessage = ["",""];
         this._sendMessage('Here the Game starts');
 
         this._players.forEach((player,idx) => {
             player.on('turn',(turn) => {
                 this._onTurn(idx,turn);
+            });
+        });
+
+        this._players.forEach((player,idx) => {
+            player.on('recm',(recm) => {
+                this._sendMessage(recm);
             });
         });
     }

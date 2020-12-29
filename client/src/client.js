@@ -24,7 +24,7 @@ const onFormSubmitted = (e) => {
     const input = document.querySelector('#chat');
     const text = input.value;
     input.value = '';
-    sock.emit('message',text);
+    sock.emit('recm',text);
 };
 
 const addButtonListeners = () => {
